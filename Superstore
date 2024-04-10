@@ -28,16 +28,18 @@ VALUES
 #For this project, I used SQL to query the Superstore database to get information about items sold at the store and their prices.
 
 #Use a SELECT statement to order the items by price.
-select *
-from superstore
-order by price;
+SELECT *
+FROM superstore
+ORDER BY price;
 
 #Show a statistic about the item prices.
-select max(price)
-from superstore;
+SELECT item_name, MAX(price)
+FROM superstore
+GROUP BY item_name;
 
 #Show a statistic about the price for items in the category of "Kitchen Supplies".
-select sum(price), category
-from superstore
-where category = 'Kitchen Supplies';
+SELECT category, SUM(price)
+FROM superstore
+WHERE category='Kitchen Supplies';
+
 
